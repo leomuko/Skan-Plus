@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.text_recognition_button).setOnClickListener{
-            Toast.makeText(applicationContext, "To do Text Recognition", Toast.LENGTH_SHORT).show()
+            /*Toast.makeText(applicationContext, "To do Text Recognition", Toast.LENGTH_SHORT).show()*/
+            val intent = Intent(applicationContext, TextRecognitionActivity::class.java )
+            startActivity(intent)
         }
 
     }
