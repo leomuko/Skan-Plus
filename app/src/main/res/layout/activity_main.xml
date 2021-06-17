@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+  <Button
+      android:id="@+id/create_barcode"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Create Barcode"
+      app:layout_constraintBottom_toTopOf="@+id/scan_barcode_btn"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_chainStyle="packed" />
+
 
   <Button
       android:id="@+id/scan_barcode_btn"
@@ -16,7 +28,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/create_barcode"
       app:layout_constraintVertical_chainStyle="packed" />
 
   <Button

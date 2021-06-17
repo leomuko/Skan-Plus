@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<Button>(R.id.create_barcode).setOnClickListener{
+            val intent = Intent(applicationContext, CreateBarcodeActivity::class.java )
+            startActivity(intent)
+        }
+
     }
 
 
