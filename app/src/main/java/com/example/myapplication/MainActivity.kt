@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
@@ -27,13 +28,23 @@ class MainActivity : AppCompatActivity() {
 
         setUpPermissions()
 
-        findViewById<Button>(R.id.scan_barcode_btn).setOnClickListener{
+        findViewById<CardView>(R.id.barcode_create_view).setOnClickListener {
+            val intent = Intent(applicationContext, CreateBarcodeActivity::class.java )
+            startActivity(intent)
+        }
+
+        findViewById<CardView>(R.id.barcode_scan_view).setOnClickListener{
+            val intent = Intent(applicationContext, BarCodeActivity::class.java )
+            startActivity(intent)
+        }
+
+       /* findViewById<Button>(R.id.scan_barcode_btn).setOnClickListener{
             val intent = Intent(applicationContext, BarCodeActivity::class.java )
             startActivity(intent)
         }
 
         findViewById<Button>(R.id.text_recognition_button).setOnClickListener{
-            /*Toast.makeText(applicationContext, "To do Text Recognition", Toast.LENGTH_SHORT).show()*/
+            *//*Toast.makeText(applicationContext, "To do Text Recognition", Toast.LENGTH_SHORT).show()*//*
             val intent = Intent(applicationContext, TextRecognitionActivity::class.java )
             startActivity(intent)
         }
@@ -41,7 +52,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.create_barcode).setOnClickListener{
             val intent = Intent(applicationContext, CreateBarcodeActivity::class.java )
             startActivity(intent)
-        }
+        }*/
+
 
     }
 
