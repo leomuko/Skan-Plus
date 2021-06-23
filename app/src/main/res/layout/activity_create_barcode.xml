@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CreateBarcodeActivity">
 
-    <EditText
-        android:id="@+id/text_field"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Type or Paste Link"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -33,10 +18,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Type or Paste Link for encryption"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button3"
+        android:clickable="true"
+        android:gravity="center|clip_vertical"
+        app:layout_constraintEnd_toEndOf="@+id/text_field"
+        app:layout_constraintStart_toStartOf="@+id/text_field"
+        app:layout_constraintTop_toBottomOf="@+id/text_field">
+
+
+        <TextView
+            android:id="@+id/keyword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="TAP TO SELECT ENCRYPTION FORMAT"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/text_field"
         app:layout_constraintStart_toStartOf="@+id/text_field"
@@ -49,21 +77,65 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/button3"
-        android:text="Create Barcode"
+        android:text="Create Encryption"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/text_field"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/text_field"
-        app:layout_constraintTop_toBottomOf="@+id/text_field" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:fabSize="normal"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:src="@drawable/ic_baseline_keyboard_arrow_up" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_baseline_save"
+            app:fabSize="mini"
+            app:backgroundTint="@android:color/white"
+            app:rippleColor="@color/pink"
+            app:borderWidth="0dp"
+            app:elevation="2dp"
+            app:pressedTranslationZ="12dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_baseline_share"
+            app:fabSize="mini"
+            app:backgroundTint="@android:color/white"
+            app:rippleColor="@color/pink"
+            app:borderWidth="0dp"
+            app:elevation="2dp"
+            app:pressedTranslationZ="12dp"/>
+
+        
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_keyboard_arrow_up"
+            app:backgroundTint="@android:color/white"
+            app:rippleColor="@color/pink"
+            app:borderWidth="0dp"
+            app:elevation="2dp"
+            app:pressedTranslationZ="12dp"
+            app:fabSize="normal"/>
+
+
+        
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

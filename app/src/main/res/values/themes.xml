@@ -24,5 +24,12 @@
         <item name="android:statusBarColor">#ff867f</item>
     </style>
 
+    <style name="AppTheme2" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#ff8a80</item>
+        <item name="colorPrimaryDark">#c85a54</item>
+        <item name="colorAccent">#ffbcaf</item>
+    </style>
+
 
 </resources>
