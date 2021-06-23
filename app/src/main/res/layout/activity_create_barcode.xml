@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CreateBarcodeActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Type Or Paste Text in the Field Below"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/text_field"
@@ -26,11 +15,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="Type or Paste Link for encryption"
+        android:hint="Type or Paste Text To Encrypt"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -87,10 +76,10 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="30dp"
         android:layout_marginRight="30dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -100,12 +89,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:src="@drawable/ic_baseline_save"
-            app:fabSize="mini"
             app:backgroundTint="@android:color/white"
-            app:rippleColor="@color/pink"
             app:borderWidth="0dp"
             app:elevation="2dp"
-            app:pressedTranslationZ="12dp"/>
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:rippleColor="@color/pink" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_share"
@@ -113,28 +102,27 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:src="@drawable/ic_baseline_share"
-            app:fabSize="mini"
             app:backgroundTint="@android:color/white"
-            app:rippleColor="@color/pink"
             app:borderWidth="0dp"
             app:elevation="2dp"
-            app:pressedTranslationZ="12dp"/>
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:rippleColor="@color/pink" />
 
-        
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_keyboard_arrow_up"
             app:backgroundTint="@android:color/white"
-            app:rippleColor="@color/pink"
             app:borderWidth="0dp"
             app:elevation="2dp"
+            app:fabSize="normal"
             app:pressedTranslationZ="12dp"
-            app:fabSize="normal"/>
+            app:rippleColor="@color/pink" />
 
 
-        
     </LinearLayout>
 
 

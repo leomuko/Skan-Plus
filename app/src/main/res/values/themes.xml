@@ -16,12 +16,12 @@
 
     </style>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">#ff8a80</item>
         <item name="colorPrimaryDark">#c85a54</item>
         <item name="colorAccent">#ffbcaf</item>
-        <item name="android:statusBarColor">#ff867f</item>
+       <!-- <item name="android:statusBarColor">#c85a54</item>-->
     </style>
 
     <style name="AppTheme2" parent="Theme.MaterialComponents.Light.DarkActionBar">

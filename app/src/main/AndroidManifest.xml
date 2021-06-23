@@ -29,7 +29,8 @@
 
         </provider>
 
-        <activity android:name=".CreateBarcodeActivity"/>
+        <activity android:name=".CreateBarcodeActivity"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".TextRecognitionActivity">
             <meta-data
                 android:name="com.google.firebase.ml.vision.DEPENDENCIES"

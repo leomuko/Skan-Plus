@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.util.Log
 import android.view.ContextThemeWrapper
+import android.view.MenuItem
 import android.view.View
 import android.view.animation.OvershootInterpolator
 import android.view.inputmethod.InputMethodManager
@@ -68,6 +69,13 @@ class CreateBarcodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_barcode)
+
+        val actionBar = supportActionBar
+        actionBar!!.apply {
+            title = "Create Encrypted Images"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
         mainFab = findViewById(R.id.fab_main)
         shareFab = findViewById(R.id.fab_share)
@@ -391,6 +399,14 @@ class CreateBarcodeActivity : AppCompatActivity() {
                 ).show()
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == android.R.id.home){
+            onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
