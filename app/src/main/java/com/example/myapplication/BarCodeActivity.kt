@@ -1,8 +1,10 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.widget.TextView
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
@@ -36,7 +38,11 @@ class BarCodeActivity : AppCompatActivity() {
 
             decodeCallback = DecodeCallback {
                 runOnUiThread{
-                    findViewById<TextView>(R.id.tv_textView).text = it.text
+                   // findViewById<TextView>(R.id.tv_textView).text = it.text
+                    val intent = Intent(this@BarCodeActivity, BarcodeResultActivity::class.java)
+                    intent.putExtra("Result", it.text)
+                    startActivity(intent)
+                    finish()
 
                 }
             }

@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_image"
     tools:context=".BarCodeActivity">
 
 
     <com.budiyev.android.codescanner.CodeScannerView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:id="@+id/scanner_view"
         app:autoFocusButtonColor="@android:color/white"
         app:autoFocusButtonVisible="true"
@@ -18,16 +17,5 @@
         app:flashButtonVisible="true"
         app:maskColor="#6C000800"
         />
-
-
-    <TextView
-        android:id="@+id/tv_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scanner_view"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:text="Scan Something"
-        android:textColor="@android:color/black"/>
 
 </RelativeLayout>
