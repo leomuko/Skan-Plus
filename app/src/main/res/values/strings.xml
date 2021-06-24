@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Skan++</string>
     <string name="nothing_detected">Nothing Detected</string>
     <string name="browse_prod">Browse Product</string>
     <string name="browse">Browse</string>
