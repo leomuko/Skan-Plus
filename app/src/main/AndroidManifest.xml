@@ -16,8 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".BarcodeResultActivity"
-            android:theme="@style/AppTheme"/>
+        <activity android:name=".History.HistoryActivity"></activity>
+        <activity
+            android:name=".BarcodeResultActivity"
+            android:theme="@style/AppTheme" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

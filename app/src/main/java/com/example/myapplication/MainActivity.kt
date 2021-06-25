@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
+import com.example.myapplication.History.HistoryActivity
 
 private const val CAMERA_REQUEST_CODE = 101
 
@@ -38,12 +39,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-       /* findViewById<Button>(R.id.scan_barcode_btn).setOnClickListener{
-            val intent = Intent(applicationContext, BarCodeActivity::class.java )
+        findViewById<CardView>(R.id.history_view).setOnClickListener{
+            val intent = Intent(applicationContext, HistoryActivity::class.java )
             startActivity(intent)
         }
 
-        findViewById<Button>(R.id.text_recognition_button).setOnClickListener{
+       /* findViewById<Button>(R.id.text_recognition_button).setOnClickListener{
             *//*Toast.makeText(applicationContext, "To do Text Recognition", Toast.LENGTH_SHORT).show()*//*
             val intent = Intent(applicationContext, TextRecognitionActivity::class.java )
             startActivity(intent)
