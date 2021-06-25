@@ -6,11 +6,13 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.text.Html
 import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.MenuItem
@@ -72,9 +74,10 @@ class CreateBarcodeActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.apply {
-            title = "Create Encrypted Images"
+            title = Html.fromHtml("<font color='#ffffff'>Create Encrypted Images</font>")
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+
         }
 
         mainFab = findViewById(R.id.fab_main)

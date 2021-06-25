@@ -7,4 +7,5 @@
     <string name="url_detected">URL Detected</string>
     <string name="copy_">Copy Text</string>
     <string name="contact_">Contact Detected</string>
+    <string name="description">Create And Scan Bar Codes, Qr Codes And Various Types of 2 dimensional Codes</string>
 </resources>

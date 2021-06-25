@@ -10,4 +10,7 @@
     <color name="pink">#ff8a80</color>
     <color name="darkPink">#c85a54</color>
     <color name="lightPink">#ffbcaf</color>
+    <color name="colorPrimary">#0d46a0</color>
+    <color name="colorPrimaryLight">#5471d2</color>
+    <color name="colorPrimaryDark">#002071</color>
 </resources>

@@ -42,7 +42,7 @@
             android:layout_marginBottom="12dp"
             android:gravity="center"
             android:text="TAP TO SELECT ENCRYPTION FORMAT"
-            android:textColor="#000000"
+            android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/button3"
         android:text="Create Encryption"
-        android:textColor="@color/black"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/text_field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/text_field"
@@ -89,12 +89,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:src="@drawable/ic_baseline_save"
-            app:backgroundTint="@android:color/white"
+            app:backgroundTint="@color/colorPrimary"
             app:borderWidth="0dp"
             app:elevation="2dp"
             app:fabSize="mini"
             app:pressedTranslationZ="12dp"
-            app:rippleColor="@color/pink" />
+            app:rippleColor="@color/colorPrimary" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_share"
@@ -102,12 +102,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:src="@drawable/ic_baseline_share"
-            app:backgroundTint="@android:color/white"
+            app:backgroundTint="@color/colorPrimary"
             app:borderWidth="0dp"
             app:elevation="2dp"
             app:fabSize="mini"
             app:pressedTranslationZ="12dp"
-            app:rippleColor="@color/pink" />
+            app:rippleColor="@color/colorPrimary" />
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -115,12 +115,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_keyboard_arrow_up"
-            app:backgroundTint="@android:color/white"
+            app:backgroundTint="@color/colorPrimary"
             app:borderWidth="0dp"
             app:elevation="2dp"
             app:fabSize="normal"
             app:pressedTranslationZ="12dp"
-            app:rippleColor="@color/pink" />
+            app:rippleColor="@color/colorPrimary" />
 
 
     </LinearLayout>

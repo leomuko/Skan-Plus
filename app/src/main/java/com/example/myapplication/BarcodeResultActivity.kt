@@ -5,6 +5,7 @@ import android.content.ClipboardManager
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Html
 import android.text.method.ScrollingMovementMethod
 import android.util.Patterns
 import android.view.MenuItem
@@ -31,7 +32,7 @@ class BarcodeResultActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.apply {
-            title = "Result"
+            title = Html.fromHtml("<font color='#ffffff'>Result</font>")
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
@@ -67,7 +68,7 @@ class BarcodeResultActivity : AppCompatActivity() {
             resultImage?.background = ContextCompat.getDrawable(this, R.drawable.ic_warning)
             shareButton?.visibility = View.INVISIBLE
             openResultButton?.visibility = View.INVISIBLE
-        }else if (isInteger(value)){
+        }else if (isInteger(value?.substring(0,2))){
             // for product result
             resultTypeTxtView?.text = getString(R.string.prod_detected)
             resultTxtView?.text = value
@@ -79,7 +80,7 @@ class BarcodeResultActivity : AppCompatActivity() {
             openResultButton?.text = getString(R.string.browse_prod)
             openResultButton?.setOnClickListener {
                 //open product in browser
-                value?.let { it1 -> doWebSearch(it1) }
+                value?.let { it1 -> doProductSearch(it1) }
             }
         }else if (Patterns.WEB_URL.matcher(value?.toLowerCase()).matches()){
             //for url result
@@ -126,6 +127,12 @@ class BarcodeResultActivity : AppCompatActivity() {
                 Toast.makeText(this, "Text has been copied to clipboard", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun doProductSearch(productValue: String) {
+        val i = Intent(Intent.ACTION_VIEW)
+        i.data = Uri.parse("https://www.google.com/#q=$productValue")
+        startActivity(i)
     }
 
     private fun copyToClipBoard(text: String?) {
