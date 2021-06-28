@@ -25,4 +25,14 @@
         app:frameThickness="2dp"
         />
 
+    <View
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:visibility="visible"
+        android:layout_margin="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorPrimary" />
+
 </RelativeLayout>

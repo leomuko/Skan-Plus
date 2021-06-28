@@ -5,13 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import kotlinx.android.synthetic.main.activity_bar_code.*
 
 class BarCodeActivity : AppCompatActivity() {
 
@@ -21,7 +27,25 @@ class BarCodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bar_code)
 
+        startAnimation()
         codeScanner()
+    }
+
+    private fun startAnimation() {
+        val animation : Animation = AnimationUtils.loadAnimation(this, R.anim.scan_animation)
+        animation.setAnimationListener(object : Animation.AnimationListener{
+            override fun onAnimationStart(p0: Animation?) {
+            }
+
+            override fun onAnimationEnd(p0: Animation?) {
+                bar.visibility = View.GONE
+            }
+
+            override fun onAnimationRepeat(p0: Animation?) {
+            }
+
+        })
+        bar.startAnimation(animation)
     }
 
     private fun codeScanner(){
@@ -38,7 +62,6 @@ class BarCodeActivity : AppCompatActivity() {
 
             decodeCallback = DecodeCallback {
                 runOnUiThread{
-                   // findViewById<TextView>(R.id.tv_textView).text = it.text
                     val intent = Intent(this@BarCodeActivity, BarcodeResultActivity::class.java)
                     intent.putExtra("Result", it.text)
                     startActivity(intent)
@@ -49,7 +72,7 @@ class BarCodeActivity : AppCompatActivity() {
 
             errorCallback = ErrorCallback {
                 runOnUiThread {
-                    Log.e("Main", "codeScanner: ${it.message}")
+                   Toast.makeText(this@BarCodeActivity, it.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
