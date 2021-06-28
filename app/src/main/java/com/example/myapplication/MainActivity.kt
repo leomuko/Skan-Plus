@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
 import com.example.myapplication.History.HistoryActivity
+import com.example.myapplication.Settings.SettingsActivity
 
 private const val CAMERA_REQUEST_CODE = 101
 
@@ -44,13 +45,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-       /* findViewById<Button>(R.id.text_recognition_button).setOnClickListener{
-            *//*Toast.makeText(applicationContext, "To do Text Recognition", Toast.LENGTH_SHORT).show()*//*
-            val intent = Intent(applicationContext, TextRecognitionActivity::class.java )
+      findViewById<CardView>(R.id.barcode_settings_view).setOnClickListener{
+
+            val intent = Intent(applicationContext, SettingsActivity::class.java )
             startActivity(intent)
         }
 
-        findViewById<Button>(R.id.create_barcode).setOnClickListener{
+        /*  findViewById<Button>(R.id.create_barcode).setOnClickListener{
             val intent = Intent(applicationContext, CreateBarcodeActivity::class.java )
             startActivity(intent)
         }*/

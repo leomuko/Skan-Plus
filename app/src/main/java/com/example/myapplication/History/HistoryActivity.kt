@@ -1,12 +1,15 @@
 package com.example.myapplication.History
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.example.myapplication.Helpers.ViewPagerAdapter
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.google.android.material.tabs.TabLayout
 
@@ -43,6 +46,14 @@ class HistoryActivity : AppCompatActivity() {
 
         viewPager?.adapter = viewPagerAdapter
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == android.R.id.home){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 
