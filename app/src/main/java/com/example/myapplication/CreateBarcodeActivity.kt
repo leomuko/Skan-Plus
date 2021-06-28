@@ -174,7 +174,7 @@ class CreateBarcodeActivity : AppCompatActivity() {
 
     private fun openCodesDialog() {
 
-        val context: Context = ContextThemeWrapper(this, R.style.AppTheme2)
+        val context: Context = ContextThemeWrapper(this, R.style.AppTheme3)
         val builder = MaterialAlertDialogBuilder(context)
         builder.setTitle("Select Code Encryption To Use")
         //set single choice items
