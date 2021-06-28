@@ -10,4 +10,7 @@
     <string name="description">Create And Scan Bar Codes, Qr Codes And Various Types of 2 dimensional Codes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="product">product</string>
+    <string name="contact">contact</string>
+    <string name="website">website</string>
 </resources>

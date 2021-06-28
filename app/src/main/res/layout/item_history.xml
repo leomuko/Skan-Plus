@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardBackgroundColor="#11614040"
+    android:layout_margin="5dp"
     app:cardCornerRadius="5dp">
+    <!-- app:cardBackgroundColor="#11614040"-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,38 +14,40 @@
 
         <ImageView
             android:id="@+id/item_ImageView"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/ic_text_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/item_result"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:layout_marginStart="24dp"
+            android:inputType="textMultiLine"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
             android:text="Barcode Result"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintBottom_toTopOf="@+id/item_type"
             app:layout_constraintStart_toEndOf="@+id/item_ImageView"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/item_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Text"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/item_ImageView"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/item_result"
+            app:layout_constraintTop_toBottomOf="@+id/item_result" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

@@ -25,6 +25,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.lifecycle.ViewModelProvider
+import com.example.myapplication.data.ScanViewModel
+import com.example.myapplication.data.ScannerDataModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputLayout
@@ -66,6 +69,9 @@ class CreateBarcodeActivity : AppCompatActivity() {
     private val TAG = "CreateBarcodeActivity"
     private var toSave = false
     private var toShare = false
+    private lateinit var mScanViewModel: ScanViewModel
+    var scanData: ScannerDataModel? = null
+    var checkedItemPosition = -1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,6 +85,8 @@ class CreateBarcodeActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
 
         }
+
+        mScanViewModel = ViewModelProvider(this).get(ScanViewModel::class.java)
 
         mainFab = findViewById(R.id.fab_main)
         shareFab = findViewById(R.id.fab_share)
@@ -109,8 +117,52 @@ class CreateBarcodeActivity : AppCompatActivity() {
             checkWritingPermission()
         }
 
+        scanData = intent.extras?.getParcelable("DATA")
+        if (scanData != null) {
+            populateViews()
+        }
+
 
     }
+
+    private fun populateViews() {
+        //type for the creating of barcode refers to the barcode type made
+        textToEncryptEditText?.setText(scanData?.result)
+        checkedItemPosition = getBarcodeFormatPosition(scanData?.type)
+        codeTypeTv?.text = scanData?.type
+        val multiFormatWriter: MultiFormatWriter = MultiFormatWriter()
+        try {
+            val bitMatrix: BitMatrix = multiFormatWriter.encode(
+                scanData?.result,
+                scanData?.type?.let { getBarcodeFormat(it) },
+                500,
+                500
+            )
+
+            val barcodeEncoder: BarcodeEncoder = BarcodeEncoder()
+            bitmap = barcodeEncoder.createBitmap(bitMatrix)
+            imageView?.setImageBitmap(bitmap)
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun getBarcodeFormatPosition(type: String?): Int {
+        var thePosition = -1
+        when (type) {
+            "AZTEC 2D Barcode" -> checkedItemPosition = 0
+            "CODE 39 1D" -> checkedItemPosition = 1
+            "CODE 128 1D" -> checkedItemPosition = 2
+            "DATA MATRIX 2D" -> checkedItemPosition = 3
+            "PDF417" -> checkedItemPosition = 4
+            "QR Code" -> checkedItemPosition = 5
+
+        }
+        return thePosition
+    }
+
 
     private fun shareImageUri(uri: Uri) {
         val intent = Intent(Intent.ACTION_SEND)
@@ -128,7 +180,7 @@ class CreateBarcodeActivity : AppCompatActivity() {
         //set single choice items
         builder.setSingleChoiceItems(
             listOfCodes,
-            -1,
+           checkedItemPosition,
         ) { dialog, i ->
         }
         // alert dialog positive button
@@ -231,12 +283,22 @@ class CreateBarcodeActivity : AppCompatActivity() {
                     Toast.LENGTH_LONG
                 ).show()
 
+                saveToDatabase(textToEncryptEditText?.text.toString(),codeTypeTv?.text.toString(), false )
+
             } catch (e: Exception) {
                 e.printStackTrace()
                 Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
             }
         }
     }
+
+    private fun saveToDatabase(result: String, type: String, create: Boolean) {
+        val s: ScannerDataModel? = result?.let { ScannerDataModel(0, type, it, create) }
+        if (s != null) {
+            mScanViewModel.addScannerData(s)
+        }
+    }
+
 
     //get barcode format basing off the selected Type
     private fun getBarcodeFormat(s: String): BarcodeFormat {
