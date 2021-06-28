@@ -13,7 +13,6 @@
         android:layout_margin="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="#11614040"
         app:cardCornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:text="Spread the word"
                 android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/item_ImageView"
+                app:layout_constraintBottom_toBottomOf="@+id/ImageView1"
                 app:layout_constraintStart_toStartOf="@+id/text_view1"
                 app:layout_constraintTop_toBottomOf="@+id/text_view1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -69,7 +68,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="#11614040"
         app:cardCornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

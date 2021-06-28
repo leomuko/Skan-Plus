@@ -3,6 +3,7 @@ package com.example.myapplication.Settings
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.MenuItem
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
@@ -14,7 +15,7 @@ class SettingsActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.title = "Settings"
+        supportActionBar?.title = Html.fromHtml("<font color='#ffffff'>Settings</font>")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
