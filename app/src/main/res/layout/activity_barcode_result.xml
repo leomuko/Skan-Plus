@@ -115,4 +115,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/shareBtn"
         app:layout_constraintTop_toTopOf="@+id/shareBtn" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button3"
+        android:text="Delete"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/openButton"
+        app:layout_constraintStart_toStartOf="@+id/shareBtn"
+        app:layout_constraintTop_toBottomOf="@+id/shareBtn"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

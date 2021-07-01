@@ -74,6 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
@@ -103,6 +104,7 @@
             android:layout_margin="5dp"
             android:src="@drawable/ic_baseline_share"
             app:backgroundTint="@color/colorPrimary"
+            app:tint="@android:color/white"
             app:borderWidth="0dp"
             app:elevation="2dp"
             app:fabSize="mini"
@@ -124,6 +126,19 @@
 
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/delete_Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button3"
+        android:text="Delete"
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

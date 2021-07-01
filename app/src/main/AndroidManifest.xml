@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.scanner.skan">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Splash.SplashActivity"
+        <activity android:name="com.scanner.skan.Splash.SplashActivity"
             android:theme="@style/AppTheme2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,16 +25,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Settings.SettingsActivity"
+            android:name="com.scanner.skan.Settings.SettingsActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".History.HistoryActivity" />
+        <activity android:name="com.scanner.skan.History.HistoryActivity" />
         <activity
-            android:name=".BarcodeResultActivity"
+            android:name="com.scanner.skan.BarcodeResultActivity"
             android:theme="@style/AppTheme" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.myapplication.provider"
+            android:authorities="com.scanner.skan.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -43,10 +43,10 @@
         </provider>
 
         <activity
-            android:name=".CreateBarcodeActivity"
+            android:name="com.scanner.skan.CreateBarcodeActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".BarCodeActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.scanner.skan.BarCodeActivity" />
+        <activity android:name="com.scanner.skan.MainActivity">
 
         </activity>
     </application>
