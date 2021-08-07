@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.scanner.skan.BarcodeResultActivity
+import com.scanner.skan.barcode.BarcodeResultActivity
 import com.scanner.skan.R
 import com.scanner.skan.data.ScannerDataModel
 import kotlinx.android.synthetic.main.item_history.view.*

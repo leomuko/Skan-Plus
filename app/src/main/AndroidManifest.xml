@@ -29,7 +29,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name="com.scanner.skan.History.HistoryActivity" />
         <activity
-            android:name="com.scanner.skan.BarcodeResultActivity"
+            android:name="com.scanner.skan.barcode.BarcodeResultActivity"
             android:theme="@style/AppTheme" />
 
         <provider
@@ -43,9 +43,9 @@
         </provider>
 
         <activity
-            android:name="com.scanner.skan.CreateBarcodeActivity"
+            android:name="com.scanner.skan.barcode.CreateBarcodeActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.scanner.skan.BarCodeActivity" />
+        <activity android:name="com.scanner.skan.barcode.BarCodeActivity" />
         <activity android:name="com.scanner.skan.MainActivity">
 
         </activity>
