@@ -82,6 +82,11 @@ class HistoryActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onBackPressed() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
 
 
 }

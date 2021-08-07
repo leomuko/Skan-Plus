@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.scanner.skan.Helpers.GridSpacingItemDecoration
 import com.scanner.skan.adapters.MenuRecyclerAdapter
 import com.scanner.skan.models.MenuModel
@@ -23,6 +24,7 @@ private var recyclerView :RecyclerView? = null;
 private var adapter : MenuRecyclerAdapter? = null
 private lateinit var dashboardList : MutableList<MenuModel>
 
+private lateinit var firebaseAnalytics: FirebaseAnalytics
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         dashboardList  = ArrayList<MenuModel>()
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
 
         setUpPermissions()

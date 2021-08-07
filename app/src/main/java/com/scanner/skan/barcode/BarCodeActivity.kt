@@ -12,6 +12,7 @@ import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import com.scanner.skan.MainActivity
 import com.scanner.skan.R
 import kotlinx.android.synthetic.main.activity_bar_code.*
 
@@ -90,5 +91,10 @@ class BarCodeActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         codeScanner.releaseResources()
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }
