@@ -1,4 +1,4 @@
-# Skan ++
+# Skan ++ (Open Source Barcode Scanning and Creation App)
 
 This is a barcode scanning and barcode / 2d format image creation app.
 The app is meant to be entirely free and is currently posted on Google play store.
@@ -60,8 +60,7 @@ dependencies {
 
 * Slow Scanning of Barcodes
 
-#Final Note
+# Open Source Licencing Info
 
-* Feel Free to use the code as You wish.  I plan to make this an open source project pretty soon
-* Thank you.. Leave a star if you are in any way impressed.
+1. [LICENCE](https://github.com/leomuko/Skan-Plus/blob/main/LICENCE.txt)
 
